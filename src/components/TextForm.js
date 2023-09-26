@@ -44,6 +44,7 @@ export default function TextForm(props) {
     let text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value)
+    document.getSelection().removeAllRanges();
     props.showAlert("Text has been copyed!", "success")
   };
   
@@ -74,36 +75,36 @@ export default function TextForm(props) {
         color: props.mode==='dark' ? "white" : "black"}}
         ></textarea>
       </div>
-      <button className="btn btn-success m-3" onClick={handleUpClick}>
+      <button disabled={text.length===0} className="btn btn-success m-3 my-1" onClick={handleUpClick}>
         UPPER CASE
       </button>
-      <button className="btn btn-info m-3" onClick={handleUpClick2}>
+      <button disabled={text.length===0} className="btn btn-info m-3 my-1" onClick={handleUpClick2}>
         lower case
       </button>
-      <button className="btn border-dark btn-light m-3" onClick={copyHandler}>
+      <button disabled={text.length===0} className="btn border-dark btn-light m-3 my-1" onClick={copyHandler}>
         Copy Text
       </button>
-      <button className="btn btn-danger mx-3" onClick={deleteHandler}>
+      <button disabled={text.length===0} className="btn btn-danger mx-3 my-1" onClick={deleteHandler}>
         Delete
       </button>
-      <button className="btn btn-primary m-3" onClick={titleHandler}>
+      <button disabled={text.length===0} className="btn btn-primary m-3 my-1" onClick={titleHandler}>
         Title Case
       </button>
-      <button className="btn btn-outline-secondary mx-3" onClick={HandlExtraSpace}>
+      <button disabled={text.length===0} className="btn btn-outline-secondary mx-3 my-1" onClick={HandlExtraSpace}>
         Remove Space
       </button>
-      <button className="btn btn-dark m-3" onClick={reverseHandler}>
+      <button disabled={text.length===0} className="btn btn-dark m-3 my-1" onClick={reverseHandler}>
         Reverse string
       </button>
-      <button className="btn btn-warning mx-3" onClick={downloadText}>
+      <button disabled={text.length===0} className="btn btn-warning mx-3 my-1" onClick={downloadText}>
         Download Text
       </button>
       <div>
         <h1>Your text summary</h1>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in the textbox to preview it here"}</p>
       </div>

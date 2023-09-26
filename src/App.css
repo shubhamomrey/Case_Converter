@@ -13,22 +13,40 @@
   color: #ffffff;
 }
 
-/* .dark-mode {
-  position: absolute;
-  margin-top: 373px;
-  margin-left: 1050px;
-  background-color: lightgray;
-  border-radius: 8%;
+.about-section{
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  color: #ffffff;
+  padding: 50px;
 }
-
+.about-section h1, h3 {
+  color: black;
+  text-shadow: 2px 2px red;
+}
+.my-image{
+  position: absolute;
+  margin-left: 80%;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 10%;
+  
+}
+.my-image:hover{
+  position: absolute;
+  margin-left: 80%;
+  width: 140px;
+  border: 5px solid orange;
+  border-radius: 50%;
+}
 @media (max-width: 450px) {
-  .dark-mode {
+  .my-image{
     position: absolute;
-    margin-top: 520px;
-    margin-left: 200px;
-    width: 110px;
+    margin-left: 60%;
+    width: 70px;
   }
-} */
+  
+}
 @media (max-width: 450px) {
   .textchange {
     position: relative;
