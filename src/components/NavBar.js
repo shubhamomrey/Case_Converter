@@ -36,12 +36,20 @@ function NavBar(props) {
               </li>
             </ul>
             <form className="d-flex" role="search">
-            <div style={{width: 200,display: "flex", alignItems: "center"}} className={`form-check form-switch text-${props.mode==='light' ? 'dark' : 'light'}`}>
+            {/* <div style={{width: 200,display: "flex", alignItems: "center"}} className={`form-check form-switch text-${props.mode==='light' ? 'dark' : 'light'}`}>
   <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
   <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.mode==='light' ? 'Dark Mode' : 'Light Mode'}`</label>
-</div>
+</div> */}
+            <div className="d-flex">
+              <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode("primary")}} style={{height:30, width:30, cursor: "pointer"}}> </div>
+              <div className="bg-danger rounded mx-2" onClick={()=>{props.toggleMode("danger")}} style={{height:30, width:30, cursor: "pointer"}}> </div>
+              <div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode("success")}} style={{height:30, width:30, cursor: "pointer"}}> </div>
+              <div className="bg-warning rounded mx-2" onClick={()=>{props.toggleMode("warning")}} style={{height:30, width:30, cursor: "pointer"}}> </div>
+              <div className="bg-light rounded mx-2 border border-dark" onClick={()=>{props.toggleMode("light")}} style={{height:30, width:30, cursor: "pointer"}}> </div>
+              <div className="bg-dark rounded mx-2 border border-light" onClick={()=>{props.toggleMode("dark")}} style={{height:30, width:30, cursor: "pointer"}}> </div>
+            </div>
           
-              <input
+              {/* <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
@@ -49,7 +57,7 @@ function NavBar(props) {
               />
               <button className="btn btn-outline-success" type="submit">
                 Search
-              </button>
+              </button> */}
             </form>
           </div>
         </div>
